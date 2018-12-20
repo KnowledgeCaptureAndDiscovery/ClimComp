@@ -47,12 +47,18 @@ where:
 `python ClimComp.py '/Users/deborahkhider/Documents/MINT/Climate/MonthlyDatasets' FLDAS Rainf_f_tavg 32 36 13 17 6 8 2017`
 
 ## <a name="req">Requirements</a>
+
+### Software requirements
 Current version tested under Python 3.6 with the following dependencies.
 
 - xarray v0.11.0
 - numpy v1.15.0
 - pandas v0.23.4
 - glob2 v 0.6
+
+### Data Requirements
+
+This routine assumes that the data is stored as per FLDAS netCDF format and file organization. This makes use of monthly data **ONLY**. 
 
 ## <a name = "files">Files in this repository</a>
  - README.md: this files. Instructions and other requirements
