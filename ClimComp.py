@@ -114,6 +114,11 @@ def clim_FLDAS(path, flagP, min_lon, max_lon,\
             # Grab the appropriate data
             data_temp = nc_fid[flagP].values[:,idx_y,:]
             data = data_temp[:,:,idx_x]
+            #Remove missing values
+            flag_miss = nc_fid.attrs['missing_value']
+            # Replace by NaN
+            data = data.astype('float')
+            data[data==flag_miss]=np.nan
             # Take the average
             P.append(np.nanmean(data))
             # Get the time
