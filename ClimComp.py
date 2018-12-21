@@ -115,7 +115,7 @@ def clim_FLDAS(path, flagP, min_lon, max_lon,\
             data_temp = nc_fid[flagP].values[:,idx_y,:]
             data = data_temp[:,:,idx_x]
             # Take the average
-            P.append(np.mean(data))
+            P.append(np.nanmean(data))
             # Get the time
             years.append(time.astype('datetime64[Y]').astype(int) + 1970)
             months.append(time.astype('datetime64[M]').astype(int) % 12 + 1)
